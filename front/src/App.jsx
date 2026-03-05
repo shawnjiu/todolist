@@ -24,8 +24,11 @@ function App() {
     try {
       const res = await api.get("/todos");
       console.log("Fetched todos response:", res.data,"======================");
-      setOriginalTodos(res.data);
-      setWorkingTodos(res.data.map(todo => ({ ...todo }))); 
+     
+       const todosArray = Array.isArray(res.data) ? res.data : res.data.todos || [];
+
+  setOriginalTodos(todosArray);
+  setWorkingTodos(todosArray.map(todo => ({ ...todo })));
     } catch (err) {
       console.error("Error fetching todos:", err);
     }
