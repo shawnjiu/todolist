@@ -10,6 +10,9 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL
 });
 
+console.log(import.meta.env.VITE_API_URL,"000000000000000000000000000000000000000000")
+
+
 function App() {
  
   const [originalTodos, setOriginalTodos] = useState([]);  
