@@ -27,12 +27,16 @@ connectDB();
 
 app.use("/api/todos", todoRoutes)
 
- if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../front/dist")));
+if (process.env.NODE_ENV === "production") {
+ 
+  const distPath = path.join(__dirname, "../front/dist");
+
+  app.use(express.static(distPath));
 
   app.get('/:any*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'front/dist/index.html'));
-});
+ 
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
 }
 
 
