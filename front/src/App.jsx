@@ -23,6 +23,7 @@ function App() {
   const fetchTodos = async () => {
     try {
       const res = await api.get("/todos");
+      console.log("Fetched todos response:", res.data,"======================");
       setOriginalTodos(res.data);
       setWorkingTodos(res.data.map(todo => ({ ...todo }))); 
     } catch (err) {
