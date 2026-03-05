@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "front/src/components/ui/checkbox.jsx", "front/src/components/ui/input.jsx", "front/src/components/ui/card.jsx", "front/src/components/ui/button.jsx"]
+}
