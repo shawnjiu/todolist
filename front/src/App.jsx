@@ -10,7 +10,6 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL
 });
 
-console.log(import.meta.env.VITE_API_URL,"000000000000000000000000000000000000000000")
 
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
   const fetchTodos = async () => {
     try {
       const res = await api.get("/todos");
-      console.log("Fetched todos response:", res.data,"======================");
      
        const todosArray = Array.isArray(res.data) ? res.data : res.data.todos || [];
 
